@@ -1,0 +1,246 @@
+@charset "utf-8";
+
+/* ---------------------------------------------------------------------
+   General
+--------------------------------------------------------------------- */
+html {
+	background-image: url(img/bg.png);
+	}
+body {
+	margin: 0;
+	padding: 0;
+	font-size: medium;
+	font-family: "メイリオ", "Meiryo";
+	}
+input[type="text"] {
+	margin: 0 0.15em;
+	border: 1px #DFDBD7 solid;
+	border-radius: 3px;
+	text-align: right;
+	font-size: 150%;
+	}
+
+
+
+/* ---------------------------------------------------------------------
+   Global
+--------------------------------------------------------------------- */
+div#cb {
+	position: relative;
+	}
+p.guide {
+	position: absolute;
+	z-index: 100;
+	margin: 0;
+	padding: 0.1em 1em;
+	border-radius: 2px;
+	color: #FFF;
+	font-size: 65%;
+	background-color: #CCC;
+	}
+
+
+
+/* ---------------------------------------------------------------------
+   Letter pair setter
+--------------------------------------------------------------------- */
+div#letter_pair_setting {
+	position: relative;
+	padding-left: 1em;
+	border-bottom: 1px #DFDBD7 solid;
+	background-color: #FFF;
+	}
+div#letter_pair_setting label {
+	position: absolute;
+	top: 1.5em;
+	left: 0;
+	display: block;
+	width: 0.75em;
+	height: 1em;
+	font-size: 87.5%;
+	background: url(img/inputHere.png) no-repeat 1px 50%;
+	}
+input#pair_value {
+	width: 100%;
+	height: 2em;
+	margin: 0;
+	padding: 0.2em 0 0;
+	text-align: left;
+	border: none;
+	}
+p#letter_guide {
+	top: 4.3em;
+	left: 2em;
+	}
+	
+	
+
+
+
+/* ---------------------------------------------------------------------
+   Kerning Letters
+--------------------------------------------------------------------- */
+div#kerning { position: relative; }
+div#kerning_pair {
+	padding: 1em 0 0.5em 1.5em;
+	height: 5em;
+	border-bottom: 1px #DFDBD7 solid;
+	background-color: #FFF;
+	}
+div#kerning_pair span { font-size: 300%; }
+p#kerning_guide {
+	bottom: -0.8em;
+	left: 2em;
+	}
+
+
+
+
+/* ---------------------------------------------------------------------
+   Tuning values
+--------------------------------------------------------------------- */
+div#tuning_values {
+	position: relative;
+	height: 3em;
+	padding: 1em 1em 0;
+	border-top: 1px #F9F9F8 solid;
+	}
+
+/*
+   Kerning
+--------------------------------------------------------------------- */
+div#kerning_tuned_value {
+	float: left;
+	}
+div#kerning_tuned_value label {
+	padding: 0.5em 0 0.5em 2em;
+	background: url(img/kerning.png) no-repeat 0% 50%;
+	}
+input#tuned_value {
+	width: 3em;
+	box-shadow: 0 0.05em 0 0 rgba(0,0,0,0.2) inset;
+	}
+
+/*
+   Tuning value
+--------------------------------------------------------------------- */
+div#kerning_tuning_value {
+	float: left;
+	margin-left: 2em;
+	}
+div#kerning_tuning_value label {
+	padding: 0.5em 0 0.5em 2em;
+	background: url(img/tuningVal.png) no-repeat 0% 50%;
+	}
+input#tuning_value {
+	width: 2.5em;
+	box-shadow: 0 0.05em 0 0 rgba(0,0,0,0.2) inset;
+	}
+
+
+
+/* ---------------------------------------------------------------------
+   Font
+--------------------------------------------------------------------- */
+div#font {
+	position: relative; 
+	height: 3.5em;
+	border-bottom: 1px #DFDBD7 solid;
+	}
+	
+/*
+   Font list
+--------------------------------------------------------------------- */
+ul.font_list {
+	list-style: none;
+	position: absolute;
+	left: 1em;
+	z-index: 100;
+	margin: 0;
+	padding: 0 0 0 2.25em;
+	background: url(img/font.png) no-repeat 0% 0.15em;
+	cursor: pointer;
+	}
+ul.font_list.selecting li { display: block; }
+ul.font_list li {
+	display: none;
+	float: left;
+	width: 14em;
+	margin: -1px 0 0 -1px;
+	padding: 0.3em 0.5em;
+	border: 1px #DFDBD7 solid;
+	background-color: #FFF;
+	}
+ul.font_list li:hover {
+	background-color: #F2F2F2;
+	}
+ul.font_list li.selected { display: block; }
+
+
+/* ---------------------------------------------------------------------
+   Tuned kerning value list
+--------------------------------------------------------------------- */
+ul#kerning_set {
+	list-style: none;
+	clear: both;
+	margin: 0;
+	padding: 1.5em 1em 0;
+	border-top: 1px #F9F9F8 solid;
+	}
+ul#kerning_set li {
+	display: inline-block;
+	margin: 0 10px 10px 0;
+	padding: 10px 0;
+	border-bottom: 1px #DFDBD7 solid;
+	border-radius: 5px;
+	background-color: #FBFBFC;
+	}
+span.pair,
+span.fixed_value {
+	display: inline-block;
+	width: 3em;
+	}
+span.pair:after {
+	content: " :";
+	}
+span.fixed_value {
+	width: auto;
+	padding-right: 10px;
+	}
+span.rm {
+	padding: 0 8px;
+	color: #999;
+	}
+span.rm:hover {
+	cursor: pointer;
+	color: #CCC;
+	}
+
+
+
+/* ---------------------------------------------------------------------
+   Object to String
+--------------------------------------------------------------------- */
+div#export {
+	position: relative;
+	float: left;
+	margin-left: 3em;
+	}
+div#export label{
+	display: block;
+	text-align: right;
+	cursor: pointer;
+	}
+textarea#export_object {
+	position: absolute;
+	right: 0;
+	z-index: 200;
+	width: 25em;
+	height: 10em;
+	padding: 0.25em;
+	border: 1px #DFDBD7 solid;
+	border-radius: 3px;
+	}
+textarea#export_object.hidden {
+	display: none;
+	}
